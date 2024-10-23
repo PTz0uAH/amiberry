@@ -42,36 +42,38 @@ struct my_openfile_s {
 static bool has_logged_iconv_fail = false;
 void utf8_to_latin1_string(std::string& input, std::string& output)
 {
-	std::vector<char> in_buf(input.begin(), input.end());
-	char* src_ptr = in_buf.data();
-	size_t src_size = input.size();
-	std::vector<char> buf(1024);
-	std::string dst;
-
-	auto* iconv_ = iconv_open("ISO-8859-1//TRANSLIT", "UTF-8");
-	if (iconv_ == (iconv_t)-1) {
-		if (!has_logged_iconv_fail) {
-			write_log("iconv_open failed: will be copying directory entries verbatim\n");
-			has_logged_iconv_fail = true;
-		}
-		output = input;
-		return;
-	}
-	while (src_size > 0) {
-		char* dst_ptr = buf.data();
-		size_t dst_size = buf.size();
-		size_t res = ::iconv(iconv_, &src_ptr, &src_size, &dst_ptr, &dst_size);
-		if (res == (size_t)-1) {
-			if (errno != E2BIG) {
-				// skip character
-				++src_ptr;
-				--src_size;
-			}
-		}
-		dst.append(buf.data(), buf.size() - dst_size);
-	}
-	output = std::move(dst);
-	iconv_close(iconv_);
+	output = input;
+	return;
+	//std::vector<char> in_buf(input.begin(), input.end());
+	//char* src_ptr = in_buf.data();
+	//size_t src_size = input.size();
+	//std::vector<char> buf(1024);
+	//std::string dst;
+        //iconv_
+	//auto* iconv_ = iconv_open("ISO-8859-1//TRANSLIT", "UTF-8");
+	//if (iconv_ == (iconv_t)-1) {
+	//	if (!has_logged_iconv_fail) {
+	//		write_log("iconv_open failed: will be copying directory entries verbatim\n");
+	//		has_logged_iconv_fail = true;
+	//	}
+	//	output = input;
+	//	return;
+	//}
+	//while (src_size > 0) {
+	//	char* dst_ptr = buf.data();
+	//	size_t dst_size = buf.size();
+	//	size_t res = ::iconv(iconv_, &src_ptr, &src_size, &dst_ptr, &dst_size);
+	//	if (res == (size_t)-1) {
+	//		if (errno != E2BIG) {
+	//			// skip character
+	//			++src_ptr;
+	//			--src_size;
+	//		}
+	//	}
+	//	dst.append(buf.data(), buf.size() - dst_size);
+	//}
+	//output = std::move(dst);
+	//iconv_close(iconv_);
 }
 
 std::string iso_8859_1_to_utf8(const std::string& str)

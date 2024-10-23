@@ -150,7 +150,7 @@ void handleAbout(bool checkForUpdates, FloppyBridge::BridgeAbout** output) {
 #endif
     if ((checkForUpdates) && (!hasUpdateChecked)) {
         hasUpdateChecked = true;
-
+/*
 #ifdef _WIN32
         // Start winsock
         WSADATA data;
@@ -194,7 +194,7 @@ void handleAbout(bool checkForUpdates, FloppyBridge::BridgeAbout** output) {
         hostent* address = gethostbyname("floppybridge-amiga.robsmithdev.co.uk");
         if ((address) && (address->h_addrtype == AF_INET)) {
             if (address->h_addr_list[0] != 0) {
-                in_addr add = *((in_addr*)address->h_addr_list[0]);
+                const in_addr add = *((in_addr*)address->h_addr_list[0]);
                 uint32_t bytes = htonl(add.s_addr);
                 BridgeInformationUpdate.updateMajorVersion = bytes >> 24;
                 BridgeInformationUpdate.updateMinorVersion = (bytes >> 16) & 0xFF;
@@ -205,6 +205,7 @@ void handleAbout(bool checkForUpdates, FloppyBridge::BridgeAbout** output) {
             }
         }
 #endif
+*/
     }
 #ifdef _WIN32
     if (output) 

@@ -13,7 +13,7 @@
 */
 #include "sysconfig.h"
 #include "sysdeps.h"
-#ifdef HAVE_SYS_TIMEB_H
+#ifndef HAVE_SYS_TIMEB_H
 #include <sys/timeb.h>
 #endif
 #include <sys/types.h>

@@ -14,7 +14,7 @@ if (NOT CMAKE_SYSTEM_NAME MATCHES "Darwin")
     set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS} -Wl,--as-needed -Wl,--gc-sections -Wl,--strip-all")
     set(CMAKE_SHARED_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS} -g")
 else ()
-    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-Wl,-dead_strip")
+    set(CMAKE_EXE_LINKER_FLAGS_RELEASE "-Wl,-dead_strip,-fPIE")
 endif()
 
 # Set build type to "Release" if user did not specify any build type yet
