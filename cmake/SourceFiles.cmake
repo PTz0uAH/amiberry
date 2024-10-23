@@ -415,8 +415,8 @@ elseif (CMAKE_SYSTEM_PROCESSOR MATCHES "arm")
     )
 endif ()
 
-target_compile_options(${PROJECT_NAME} PRIVATE -fno-pie)
-target_link_options(${PROJECT_NAME} PRIVATE -no-pie)
+target_compile_options(${PROJECT_NAME} PRIVATE -fpie)
+target_link_options(${PROJECT_NAME} PRIVATE -pie)
 
 target_include_directories(${PROJECT_NAME} PRIVATE
         src
