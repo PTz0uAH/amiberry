@@ -6,6 +6,9 @@ conf/*.conf
 roms/*.rom
 roms/*.key
 /amiberry*
+conf
+floppies
+harddrives
 
 ### VisualGDB ###
 VisualGDB/VisualGDB/Debug

@@ -14,6 +14,9 @@ option(USE_OPENGL "Use OpenGL" OFF)
 # Enable Link Time Optimization?
 option(WITH_LTO "Enable Link Time Optimization" OFF)
 
+# Enable custom building for Termux-X11 aarch64
+option(TERMUX "Build for TERMUX" OFF)
+
 ## Determine proper semantic version
 set(VERSION_MAJOR "7")
 set(VERSION_MINOR "0")
