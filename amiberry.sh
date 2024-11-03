@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/sh
-PRGDIR=$HOME/Amiberry
+PRGDIR=$PREFIX/bin/amiberry
 PRGNAME=amiberry
 ARGS="$@"
 cd $PRGDIR
