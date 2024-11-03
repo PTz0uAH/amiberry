@@ -3,19 +3,23 @@
   Version: 7.0.0
   Architecture: aarch64
   Maintainer: Peter Slootbeek <@PTz0uAH>
-  Depends: libserialport, portmidi
+  Depends: libserialport, portmidi, xfce4, sdl2
   Homepage: https://github.com/PTz0uAH/termuxified/issues/3
   Description: |-
    amiberry v7.0.0 Optimized Commodore Amiga emulator for Termux
     .
-    The emulator needs Kickstart-rom and Amiga Operating System to boot.
+    Amiberry is based on the latest WinUAE, with several features on top of it,
+    like WHDLoad booter, custom controls, Host-Run functionality and more.
+    .
+    Amiberry needs Kickstart-rom and Amiga Operating System to boot.
     Kickstart nor OS are included, the user has to provide those files themself.
-    If you have no Amiga-rom you can use the build-in Aros-rom.
+    If one has no Amiga-rom the build-in Aros-rom will be used.
     The Aros-rom is a free Amiga-rom replacement also used to boot Aros-OS.
     The Aros-rom works with a lot of oldskool Amiga demos and games.
-    For serious applications and modern Workbench you must use Amiga-roms.
+    For serious applications and modern Workbench you must use an Amiga-rom.
     .
-    Amiberry for Termux-non-root was 100 percent created on-device!
+    Amiberry for Termux-non-root was 100 percent created on-device.
+    The program runs best on fast android device with plenty memory!
     .
     Have tons of fun!
     .
