@@ -50,6 +50,7 @@ void InitPanelAbout(const config_category& category)
 		"Thomas Navarro Garcia - Original Amiberry logo\n"
 		"Chips - Original RPI port\n"
 		"Vasiliki Soufi - Amiberry name\n"
+		"Peter Slootbeek (PTz0uAH) - Amiberry Android-Termux port\n"
 		"\n"
 		"Dedicated to HeZoR - R.I.P. little brother (1978-2017)\n"
 	);
